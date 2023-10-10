@@ -21,7 +21,10 @@ app.post("/addm",async(request,response)=>{
     }
 })
 
-
+app.get("/viewm",async(request,response)=>{
+    let data=await movieModel.find()
+    response.json(data)
+})
 
 app.listen(3001,()=>{
     console.log("Server is running")
